@@ -49,6 +49,6 @@
     "**/.vscode-test": true,
     "**/.vscode-remote": true
   },
-  "prettier.resolveGlobalModules": false,
-  "prettier.prettierPath": "./node_modules/prettier"
+  "prettier.resolveGlobalModules": true,
+  "prettier.prettierPath": "/Users/calm1/.nvm/versions/node/v24.5.0/lib/node_modules/prettier"
 }
