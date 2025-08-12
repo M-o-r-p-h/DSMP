@@ -1,59 +1,59 @@
 name: Build and Deploy Preview
 
 on:
-    push:
-        branches: [main]
-    pull_request:
-        branches: [main]
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
-    build-and-deploy:
-        runs-on: ubuntu-latest
+  build-and-deploy:
+    runs-on: ubuntu-latest
 
-        steps:
-            - uses: actions/checkout@v3
+    steps:
+      - uses: actions/checkout@v3
 
-            - name: Cache node modules
-              uses: actions/cache@v3
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
-                  restore-keys: |
-                      ${{ runner.os }}-modules-
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-modules-
 
-            - name: Set up Node.js
-              uses: actions/setup-node@v3
-              with:
-                  node-version: '16'
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
 
-            - name: Install dependencies
-              run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-            - name: Build
-              run: npm run build # Uses vite build
+      - name: Build
+        run: npm run build # Uses vite build
 
-            - name: Deploy to GitHub Pages
-              if: github.event_name == 'push' || github.event_name == 'pull_request'
-              uses: JamesIves/github-pages-deploy-action@4.1.5
-              with:
-                  branch: gh-pages
-                  folder: build
-                  clean: true
-                  single-commit: true
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to GitHub Pages
+        if: github.event_name == 'push' || github.event_name == 'pull_request'
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: gh-pages
+          folder: build
+          clean: true
+          single-commit: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-            - name: Comment PR Preview Link
-              if: github.event_name == 'pull_request'
-              uses: actions/github-script@v6
-              with:
-                  script: |
-                      const prNumber = context.payload.pull_request.number;
-                      const repo = context.repo;
-                      const previewUrl = `https://${repo.owner}.github.io/dsmp/`;
-                      await github.rest.issues.createComment({
-                        owner: context.repo.owner,
-                        repo: context.repo.repo,
-                        issue_number: prNumber,
-                        body: `Preview available at: ${previewUrl}`
-                      });
+      - name: Comment PR Preview Link
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const repo = context.repo;
+            const previewUrl = `https://${repo.owner}.github.io/dsmp/`;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body: `Preview available at: ${previewUrl}`
+            });
