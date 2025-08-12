@@ -2,9 +2,9 @@ name: Build and Deploy Preview
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build-and-deploy:
@@ -30,7 +30,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build  # Uses vite build
+        run: npm run build # Uses vite build
 
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' || github.event_name == 'pull_request'

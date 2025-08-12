@@ -1,6 +1,13 @@
 import React, { useCallback, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import ReactFlow, { useNodesState, useEdgesState, addEdge, Background, Controls, MiniMap } from 'reactflow';
+import ReactFlow, {
+  useNodesState,
+  useEdgesState,
+  addEdge,
+  Background,
+  Controls,
+  MiniMap,
+} from 'reactflow';
 import dagre from 'dagre';
 import { debounce } from 'lodash';
 import CustomNode from '../CustomNode/CustomNode.jsx';
@@ -49,7 +56,7 @@ const nodeTypes = { CustomNode };
 const MindMap = ({ initialNodes, initialEdges, onNodeClick, searchTerm }) => {
   const { nodes: layoutedNodes, edges: layoutedEdges } = useMemo(
     () => getLayoutedElements(initialNodes, initialEdges),
-    [initialNodes, initialEdges]
+    [initialNodes, initialEdges],
   );
 
   const [nodes, setNodes, onNodesChange] = useNodesState(layoutedNodes);
@@ -59,19 +66,29 @@ const MindMap = ({ initialNodes, initialEdges, onNodeClick, searchTerm }) => {
 
   const debouncedSetNodes = useMemo(
     () => debounce((newNodes) => setNodes(newNodes), 100),
-    [setNodes]
+    [setNodes],
   );
 
   const graphBounds = useMemo(() => {
-    if (nodes.length === 0) return [[0, 0], [0, 0]];
-    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    if (nodes.length === 0)
+      return [
+        [0, 0],
+        [0, 0],
+      ];
+    let minX = Infinity,
+      minY = Infinity,
+      maxX = -Infinity,
+      maxY = -Infinity;
     nodes.forEach((node) => {
       minX = Math.min(minX, node.position.x);
       minY = Math.min(minY, node.position.y);
       maxX = Math.max(maxX, node.position.x + (node.width || nodeWidth));
       maxY = Math.max(maxY, node.position.y + (node.height || nodeHeight));
     });
-    return [[minX - 50, minY - 50], [maxX + 50, maxY + 50]];
+    return [
+      [minX - 50, minY - 50],
+      [maxX + 50, maxY + 50],
+    ];
   }, [nodes]);
 
   useEffect(() => {
@@ -81,9 +98,13 @@ const MindMap = ({ initialNodes, initialEdges, onNodeClick, searchTerm }) => {
           ...node,
           style: {
             ...node.style,
-            opacity: searchTerm ? (node.data.label.toLowerCase().includes(searchTerm.toLowerCase()) ? 1 : 0.3) : 1,
+            opacity: searchTerm
+              ? node.data.label.toLowerCase().includes(searchTerm.toLowerCase())
+                ? 1
+                : 0.3
+              : 1,
           },
-        }))
+        })),
       );
     };
     const rafId = window.requestAnimationFrame(updateNodes);
@@ -149,7 +170,7 @@ MindMap.propTypes = {
         branch: PropTypes.string,
         icon: PropTypes.string,
       }).isRequired,
-    })
+    }),
   ).isRequired,
   initialEdges: PropTypes.arrayOf(
     PropTypes.shape({
@@ -160,7 +181,7 @@ MindMap.propTypes = {
       markerEnd: PropTypes.shape({
         type: PropTypes.string.isRequired,
       }).isRequired,
-    })
+    }),
   ).isRequired,
   onNodeClick: PropTypes.func.isRequired,
   searchTerm: PropTypes.string.isRequired,
