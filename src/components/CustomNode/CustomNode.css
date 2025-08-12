@@ -78,22 +78,27 @@
     border: none;
 }
 
-/* Branch-specific colors */
-.occult {
+/* No Background */
+.no-background {
+    background: transparent;
+}
+
+/* Branch-specific colors (only apply if background is true) */
+.occult:not(.no-background) {
     background: #4b0082;
 }
-.military {
+.military:not(.no-background) {
     background: #2f4f4f;
 }
-.financial {
+.financial:not(.no-background) {
     background: #006400;
 }
-.political {
+.political:not(.no-background) {
     background: #8b0000;
 }
-.extraterrestrial {
+.extraterrestrial:not(.no-background) {
     background: #483d8b;
 }
-.media {
+.media:not(.no-background) {
     background: #8a2be2;
 }

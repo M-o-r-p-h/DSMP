@@ -11,7 +11,8 @@ export const initialNodes = [
             icon: `${BASE_URL}/assets/icons/default.svg`,
             shape: 'circle',
             size: 'large',
-            border: false,
+            border: true,
+            background: false,
         },
     },
     // Occult & Secret Societies
@@ -26,6 +27,7 @@ export const initialNodes = [
             shape: 'ellipse',
             size: 'medium',
             border: true,
+            background: true,
         },
     },
     {
@@ -40,6 +42,7 @@ export const initialNodes = [
             shape: 'box',
             size: 'small',
             border: true,
+            background: false,
         },
     },
     {
@@ -54,6 +57,7 @@ export const initialNodes = [
             shape: 'diamond',
             size: 'medium',
             border: false,
+            background: false,
         },
     },
     // Military & Intelligence
@@ -68,6 +72,7 @@ export const initialNodes = [
             shape: 'box',
             size: 'medium',
             border: true,
+            background: true,
         },
     },
     {
@@ -82,6 +87,7 @@ export const initialNodes = [
             shape: 'ellipse',
             size: 'small',
             border: true,
+            background: false,
         },
     },
     {
@@ -96,6 +102,7 @@ export const initialNodes = [
             shape: 'none',
             size: 'medium',
             border: false,
+            background: false,
         },
     },
     // Financial Control
@@ -110,6 +117,7 @@ export const initialNodes = [
             shape: 'diamond',
             size: 'large',
             border: true,
+            background: true,
         },
     },
     {
@@ -124,6 +132,7 @@ export const initialNodes = [
             shape: 'box',
             size: 'medium',
             border: true,
+            background: false,
         },
     },
     {
@@ -138,6 +147,7 @@ export const initialNodes = [
             shape: 'circle',
             size: 'small',
             border: false,
+            background: false,
         },
     },
     // Political Control
@@ -152,6 +162,7 @@ export const initialNodes = [
             shape: 'ellipse',
             size: 'medium',
             border: true,
+            background: true,
         },
     },
     {
@@ -166,6 +177,7 @@ export const initialNodes = [
             shape: 'diamond',
             size: 'large',
             border: true,
+            background: false,
         },
     },
     {
@@ -179,6 +191,7 @@ export const initialNodes = [
             shape: 'box',
             size: 'small',
             border: false,
+            background: false,
         },
     },
     {
@@ -193,6 +206,7 @@ export const initialNodes = [
             shape: 'none',
             size: 'medium',
             border: false,
+            background: false,
         },
     },
     // Extraterrestrial & Tech
@@ -207,6 +221,7 @@ export const initialNodes = [
             shape: 'circle',
             size: 'large',
             border: true,
+            background: true,
         },
     },
     {
@@ -221,6 +236,7 @@ export const initialNodes = [
             shape: 'ellipse',
             size: 'medium',
             border: true,
+            background: false,
         },
     },
     {
@@ -235,6 +251,7 @@ export const initialNodes = [
             shape: 'diamond',
             size: 'small',
             border: false,
+            background: false,
         },
     },
     // Media & Population Control
@@ -249,6 +266,7 @@ export const initialNodes = [
             shape: 'box',
             size: 'medium',
             border: true,
+            background: true,
         },
     },
     {
@@ -263,6 +281,7 @@ export const initialNodes = [
             shape: 'circle',
             size: 'large',
             border: true,
+            background: false,
         },
     },
     {
@@ -277,6 +296,7 @@ export const initialNodes = [
             shape: 'ellipse',
             size: 'small',
             border: false,
+            background: false,
         },
     },
 ];
