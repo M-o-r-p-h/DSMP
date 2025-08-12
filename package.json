@@ -1,43 +1,43 @@
 {
-  "name": "dsmp",
-  "homepage": "https://M-o-r-p-h.github.io/dsmp",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "prepare": "husky install"
-  },
-  "dependencies": {
-    "dagre": "^0.8.5",
-    "lodash": "^4.17.21",
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-modal": "^3.16.1",
-    "reactflow": "^11.11.4"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^2.0.0",
-    "eslint": "^8.0.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "gh-pages": "^4.0.0",
-    "husky": "^8.0.0",
-    "lint-staged": "^13.0.0",
-    "prettier": "^3.0.0",
-    "vite": "^3.0.0"
-  },
-  "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{css}": [
-      "prettier --write"
-    ]
-  }
+    "name": "dsmp",
+    "homepage": "https://M-o-r-p-h.github.io/dsmp",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
+        "prepare": "husky install"
+    },
+    "dependencies": {
+        "dagre": "^0.8.5",
+        "lodash": "^4.17.21",
+        "prop-types": "^15.8.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-modal": "^3.16.1",
+        "reactflow": "^11.11.4"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "^2.0.0",
+        "eslint": "^8.0.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-prettier": "^5.0.0",
+        "eslint-plugin-react": "^7.37.5",
+        "eslint-plugin-react-hooks": "^5.2.0",
+        "gh-pages": "^4.0.0",
+        "husky": "^8.0.0",
+        "lint-staged": "^13.0.0",
+        "prettier": "^3.0.0",
+        "vite": "^3.0.0"
+    },
+    "lint-staged": {
+        "*.{js,jsx}": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "*.{css}": [
+            "prettier --write"
+        ]
+    }
 }

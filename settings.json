@@ -3,9 +3,6 @@
     "source.fixAll.eslint": "always",
     "source.organizeImports": "always"
   },
-  "editor.tabSize": 2,
-  "editor.insertSpaces": true,
-  "editor.detectIndentation": false,
   "files.autoSave": "onWindowChange",
   "files.autoSaveDelay": 1000,
   "files.trimTrailingWhitespace": true,
