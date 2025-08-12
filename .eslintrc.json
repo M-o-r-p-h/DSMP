@@ -1,0 +1,25 @@
+{
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "ecmaFeatures": { "jsx": true },
+    "sourceType": "module"
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
+    "react/react-in-jsx-scope": "off",
+    "no-unused-vars": "warn"
+  },
+  "settings": {
+    "react": { "version": "detect" }
+  }
+}
