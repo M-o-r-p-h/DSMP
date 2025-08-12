@@ -14,6 +14,8 @@ import CustomNode from '../CustomNode/CustomNode.jsx';
 import './MindMap.css';
 import 'reactflow/dist/style.css';
 
+const LOCAL_STORAGE_KEY = 'mindmap-node-positions';
+
 const dagreGraph = new dagre.graphlib.Graph();
 dagreGraph.setDefaultEdgeLabel(() => ({}));
 
@@ -59,8 +61,44 @@ const MindMap = ({ initialNodes, initialEdges, onNodeClick, searchTerm }) => {
         [initialNodes, initialEdges],
     );
 
-    const [nodes, setNodes, onNodesChange] = useNodesState(layoutedNodes);
+    // Load node positions from localStorage
+    useEffect(() => {
+        const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
+        if (saved) {
+            const savedNodes = JSON.parse(saved);
+            setNodes((nodes) =>
+                nodes.map((node) => {
+                    const savedNode = savedNodes.find((n) => n.id === node.id);
+                    return savedNode
+                        ? { ...node, position: savedNode.position }
+                        : node;
+                }),
+            );
+        }
+        // eslint-disable-next-line
+    }, []);
+
+    const [nodes, setNodes, onNodesChangeRaw] = useNodesState(layoutedNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(layoutedEdges);
+
+    // Save node positions to localStorage whenever nodes change
+    const onNodesChange = useCallback(
+        (changes) => {
+            onNodesChangeRaw(changes);
+            setTimeout(() => {
+                localStorage.setItem(
+                    LOCAL_STORAGE_KEY,
+                    JSON.stringify(
+                        nodes.map((node) => ({
+                            id: node.id,
+                            position: node.position,
+                        })),
+                    ),
+                );
+            }, 0);
+        },
+        [nodes, onNodesChangeRaw],
+    );
 
     const onConnect = useCallback(
         (params) =>
