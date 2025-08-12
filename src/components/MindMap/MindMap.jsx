@@ -4,7 +4,6 @@ import ReactFlow, {
     useNodesState,
     useEdgesState,
     addEdge,
-    Background,
     Controls,
     MiniMap,
 } from 'reactflow';
@@ -186,7 +185,6 @@ const MindMap = ({ initialNodes, initialEdges, onNodeClick, searchTerm }) => {
                     markerEnd: { type: 'arrowclosed' },
                 }}
             >
-                <Background color="#333333" variant="dots" />
                 <Controls />
                 <MiniMap
                     pannable={true}

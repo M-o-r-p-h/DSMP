@@ -18,7 +18,8 @@ const CustomNode = ({ data }) => {
                     data.branch || ''
                 }`}
                 style={{
-                    color: data.background === false ? '#000' : '#fff', // black if false, white if true
+                    color: data.background === false ? '#000' : '#fff', // text color
+                    borderColor: '#000', // black border by default
                 }}
             >
                 {data.icon && (
@@ -26,6 +27,12 @@ const CustomNode = ({ data }) => {
                         src={data.icon}
                         alt={`${data.label} icon`}
                         className="node-icon"
+                        style={{
+                            filter:
+                                data.background === false
+                                    ? 'invert(0%) brightness(0%)'
+                                    : 'invert(100%) brightness(200%)',
+                        }}
                     />
                 )}
                 <span>{data.label}</span>

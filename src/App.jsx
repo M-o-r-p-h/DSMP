@@ -25,7 +25,6 @@ function App() {
 
     return (
         <div className="app">
-            <h1>Deep State Mapping Project</h1>
             <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             <MindMap
                 initialNodes={initialNodes}
@@ -48,6 +47,7 @@ function App() {
                     </div>
                 )}
             </ReactModal>
+            <h1>Deep State Mapping Project</h1>
         </div>
     );
 }

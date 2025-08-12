@@ -38,22 +38,6 @@
     border-radius: 50% / 25%;
 }
 
-.shape-diamond {
-    transform: rotate(45deg);
-    border-radius: 0;
-    aspect-ratio: 1 / 1;
-}
-
-.shape-diamond span {
-    transform: rotate(-45deg); /* Counter-rotate text for readability */
-    display: inline-block;
-}
-
-.shape-none {
-    border: none;
-    background: transparent;
-}
-
 /* Sizes */
 .size-small {
     min-width: 100px;
