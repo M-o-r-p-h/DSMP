@@ -1,47 +1,47 @@
 .custom-node {
-  padding: 10px;
-  border: 2px solid #ffffff;
-  border-radius: 5px;
-  background: #333333; /* Dark gray for nodes */
-  color: #ffffff; /* White text for contrast */
-  min-width: 150px;
-  min-height: 30px;
-  text-align: center;
-  font-family: 'Roboto', 'Oswald', Arial, sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  transform: scale(1);
-  transition: transform 0.2s ease;
-  cursor: pointer;
+    padding: 10px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    background: #333333; /* Dark gray for nodes */
+    color: #ffffff; /* White text for contrast */
+    min-width: 150px;
+    min-height: 30px;
+    text-align: center;
+    font-family: 'Roboto', 'Oswald', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    transform: scale(1);
+    transition: transform 0.2s ease;
+    cursor: pointer;
 }
 
 .custom-node:hover {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .node-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
 }
 
 /* Branch-specific colors */
 .occult {
-  background: #4b0082; /* Indigo for Occult */
+    background: #4b0082; /* Indigo for Occult */
 }
 .military {
-  background: #2f4f4f; /* Dark slate for Military */
+    background: #2f4f4f; /* Dark slate for Military */
 }
 .financial {
-  background: #006400; /* Dark green for Financial */
+    background: #006400; /* Dark green for Financial */
 }
 .political {
-  background: #8b0000; /* Dark red for Political */
+    background: #8b0000; /* Dark red for Political */
 }
 .extraterrestrial {
-  background: #483d8b; /* Dark slate blue for Extraterrestrial */
+    background: #483d8b; /* Dark slate blue for Extraterrestrial */
 }
 .media {
-  background: #8a2be2; /* Purple for Media */
+    background: #8a2be2; /* Purple for Media */
 }

@@ -10,7 +10,6 @@
   "files.autoSaveDelay": 1000,
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "eslint.autoFixOnSave": true,
   "files.exclude": {
@@ -48,7 +47,5 @@
     "**/.history": true,
     "**/.vscode-test": true,
     "**/.vscode-remote": true
-  },
-  "prettier.resolveGlobalModules": true,
-  "prettier.prettierPath": "/Users/calm1/.nvm/versions/node/v24.5.0/lib/node_modules/prettier"
+  }
 }
