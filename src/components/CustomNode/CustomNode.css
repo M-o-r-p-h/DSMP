@@ -1,18 +1,16 @@
 .custom-node {
     padding: 10px;
     border: 2px solid #ffffff;
-    border-radius: 5px;
-    background: #333333; /* Dark gray for nodes */
-    color: #ffffff; /* White text for contrast */
-    min-width: 150px;
-    min-height: 30px;
+    background: #333333;
+    color: #ffffff;
     text-align: center;
     font-family: 'Roboto', 'Oswald', Arial, sans-serif;
     font-weight: 700;
-    font-size: 14px;
-    transform: scale(1);
     transition: transform 0.2s ease;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .custom-node:hover {
@@ -26,22 +24,76 @@
     vertical-align: middle;
 }
 
+/* Shapes */
+.shape-box {
+    border-radius: 5px;
+}
+
+.shape-circle {
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+}
+
+.shape-ellipse {
+    border-radius: 50% / 25%;
+}
+
+.shape-diamond {
+    transform: rotate(45deg);
+    border-radius: 0;
+    aspect-ratio: 1 / 1;
+}
+
+.shape-diamond span {
+    transform: rotate(-45deg); /* Counter-rotate text for readability */
+    display: inline-block;
+}
+
+.shape-none {
+    border: none;
+    background: transparent;
+}
+
+/* Sizes */
+.size-small {
+    min-width: 100px;
+    min-height: 24px;
+    font-size: 12px;
+}
+
+.size-medium {
+    min-width: 150px;
+    min-height: 36px;
+    font-size: 14px;
+}
+
+.size-large {
+    min-width: 200px;
+    min-height: 48px;
+    font-size: 16px;
+}
+
+/* No Border */
+.no-border {
+    border: none;
+}
+
 /* Branch-specific colors */
 .occult {
-    background: #4b0082; /* Indigo for Occult */
+    background: #4b0082;
 }
 .military {
-    background: #2f4f4f; /* Dark slate for Military */
+    background: #2f4f4f;
 }
 .financial {
-    background: #006400; /* Dark green for Financial */
+    background: #006400;
 }
 .political {
-    background: #8b0000; /* Dark red for Political */
+    background: #8b0000;
 }
 .extraterrestrial {
-    background: #483d8b; /* Dark slate blue for Extraterrestrial */
+    background: #483d8b;
 }
 .media {
-    background: #8a2be2; /* Purple for Media */
+    background: #8a2be2;
 }

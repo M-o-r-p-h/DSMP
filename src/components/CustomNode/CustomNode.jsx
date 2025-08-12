@@ -4,10 +4,19 @@ import { Handle } from 'reactflow';
 import './CustomNode.css';
 
 const CustomNode = ({ data }) => {
+    const shapeClass = data.shape ? `shape-${data.shape}` : 'shape-box';
+    const sizeClass = data.size ? `size-${data.size}` : 'size-medium';
+    const borderClass =
+        data.border === false || data.shape === 'none' ? 'no-border' : '';
+
     return (
         <>
             <Handle type="target" position="top" style={{ opacity: 0 }} />
-            <div className={`custom-node ${data.branch || ''}`}>
+            <div
+                className={`custom-node ${shapeClass} ${sizeClass} ${borderClass} ${
+                    data.branch || ''
+                }`}
+            >
                 {data.icon && (
                     <img
                         src={data.icon}
@@ -15,7 +24,7 @@ const CustomNode = ({ data }) => {
                         className="node-icon"
                     />
                 )}
-                {data.label}
+                <span>{data.label}</span>
             </div>
             <Handle type="source" position="bottom" style={{ opacity: 0 }} />
         </>
@@ -28,6 +37,9 @@ CustomNode.propTypes = {
         info: PropTypes.string.isRequired,
         branch: PropTypes.string,
         icon: PropTypes.string,
+        shape: PropTypes.oneOf(['box', 'circle', 'ellipse', 'diamond', 'none']),
+        size: PropTypes.oneOf(['small', 'medium', 'large']),
+        border: PropTypes.bool,
     }).isRequired,
 };
 

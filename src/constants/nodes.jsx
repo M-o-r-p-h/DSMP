@@ -1,4 +1,3 @@
-// Use BASE_URL from import.meta.env or fallback to empty string for local dev
 const BASE_URL = import.meta.env.BASE_URL || '';
 
 export const initialNodes = [
@@ -9,7 +8,10 @@ export const initialNodes = [
         data: {
             label: 'Deep State',
             info: 'Central hidden network controlling global affairs.',
-            icon: `${BASE_URL}assets/icons/default.svg`,
+            icon: `${BASE_URL}/assets/icons/default.svg`,
+            shape: 'circle',
+            size: 'large',
+            border: false,
         },
     },
     // Occult & Secret Societies
@@ -21,6 +23,9 @@ export const initialNodes = [
             label: 'Occult & Secret Societies',
             info: 'Groups using hidden knowledge and rituals.',
             branch: 'occult',
+            shape: 'ellipse',
+            size: 'medium',
+            border: true,
         },
     },
     {
@@ -31,7 +36,10 @@ export const initialNodes = [
             label: 'Vatican',
             info: 'Religious authority linked to global control.',
             branch: 'occult',
-            icon: `${BASE_URL}assets/icons/default.svg`,
+            icon: `${BASE_URL}/assets/icons/default.svg`,
+            shape: 'box',
+            size: 'small',
+            border: true,
         },
     },
     {
@@ -42,7 +50,10 @@ export const initialNodes = [
             label: 'Illuminati',
             info: 'Society orchestrating events.',
             branch: 'occult',
-            icon: `${BASE_URL}assets/icons/illuminati.svg`,
+            icon: `${BASE_URL}/assets/icons/illuminati.svg`,
+            shape: 'diamond',
+            size: 'medium',
+            border: false,
         },
     },
     // Military & Intelligence
@@ -54,6 +65,9 @@ export const initialNodes = [
             label: 'Military & Intelligence',
             info: 'Agencies for covert operations.',
             branch: 'military',
+            shape: 'box',
+            size: 'medium',
+            border: true,
         },
     },
     {
@@ -64,7 +78,10 @@ export const initialNodes = [
             label: 'CIA (1947)',
             info: 'Agency linked to mind control.',
             branch: 'military',
-            icon: `${BASE_URL}assets/icons/cia.svg`,
+            icon: `${BASE_URL}/assets/icons/cia.svg`,
+            shape: 'ellipse',
+            size: 'small',
+            border: true,
         },
     },
     {
@@ -75,7 +92,10 @@ export const initialNodes = [
             label: 'MK-Ultra',
             info: 'Mind control program.',
             branch: 'military',
-            icon: `${BASE_URL}assets/icons/default.svg`,
+            icon: `${BASE_URL}/assets/icons/default.svg`,
+            shape: 'none',
+            size: 'medium',
+            border: false,
         },
     },
     // Financial Control
@@ -87,6 +107,9 @@ export const initialNodes = [
             label: 'Financial Control',
             info: 'Systems for debt and economic control.',
             branch: 'financial',
+            shape: 'diamond',
+            size: 'large',
+            border: true,
         },
     },
     {
@@ -97,7 +120,10 @@ export const initialNodes = [
             label: 'Federal Reserve (1913)',
             info: 'Central bank for manipulation.',
             branch: 'financial',
-            icon: `${BASE_URL}assets/icons/default.svg`,
+            icon: `${BASE_URL}/assets/icons/default.svg`,
+            shape: 'box',
+            size: 'medium',
+            border: true,
         },
     },
     {
@@ -108,7 +134,10 @@ export const initialNodes = [
             label: 'Rothschilds',
             info: 'Banking family controlling finance.',
             branch: 'financial',
-            icon: `${BASE_URL}assets/icons/default.svg`,
+            icon: `${BASE_URL}/assets/icons/default.svg`,
+            shape: 'circle',
+            size: 'small',
+            border: false,
         },
     },
     // Political Control
@@ -120,6 +149,9 @@ export const initialNodes = [
             label: 'Political Control',
             info: 'Manipulated governments and events.',
             branch: 'political',
+            shape: 'ellipse',
+            size: 'medium',
+            border: true,
         },
     },
     {
@@ -130,7 +162,10 @@ export const initialNodes = [
             label: 'Cabal',
             info: 'Secret group controlling leaders.',
             branch: 'political',
-            icon: `${BASE_URL}assets/icons/default.svg`,
+            icon: `${BASE_URL}/assets/icons/default.svg`,
+            shape: 'diamond',
+            size: 'large',
+            border: true,
         },
     },
     {
@@ -141,6 +176,9 @@ export const initialNodes = [
             label: 'False Flags',
             info: 'Staged events for justification.',
             branch: 'political',
+            shape: 'box',
+            size: 'small',
+            border: false,
         },
     },
     {
@@ -151,7 +189,10 @@ export const initialNodes = [
             label: '2001 WTC Attack',
             info: 'False flag event.',
             branch: 'political',
-            icon: `${BASE_URL}assets/icons/default.svg`,
+            icon: `${BASE_URL}/assets/icons/default.svg`,
+            shape: 'none',
+            size: 'medium',
+            border: false,
         },
     },
     // Extraterrestrial & Tech
@@ -163,6 +204,9 @@ export const initialNodes = [
             label: 'Extraterrestrial & Tech',
             info: 'Hidden technologies and aliens.',
             branch: 'extraterrestrial',
+            shape: 'circle',
+            size: 'large',
+            border: true,
         },
     },
     {
@@ -173,7 +217,10 @@ export const initialNodes = [
             label: 'Roswell (1947)',
             info: 'UFO crash cover-up.',
             branch: 'extraterrestrial',
-            icon: `${BASE_URL}assets/icons/default.svg`,
+            icon: `${BASE_URL}/assets/icons/default.svg`,
+            shape: 'ellipse',
+            size: 'medium',
+            border: true,
         },
     },
     {
@@ -184,7 +231,10 @@ export const initialNodes = [
             label: 'Area 51',
             info: 'Secret base for UFOs.',
             branch: 'extraterrestrial',
-            icon: `${BASE_URL}assets/icons/default.svg`,
+            icon: `${BASE_URL}/assets/icons/default.svg`,
+            shape: 'diamond',
+            size: 'small',
+            border: false,
         },
     },
     // Media & Population Control
@@ -196,6 +246,9 @@ export const initialNodes = [
             label: 'Media & Population Control',
             info: 'Tools for perception and health manipulation.',
             branch: 'media',
+            shape: 'box',
+            size: 'medium',
+            border: true,
         },
     },
     {
@@ -206,7 +259,10 @@ export const initialNodes = [
             label: 'Hollywood',
             info: 'Industry for mind control.',
             branch: 'media',
-            icon: `${BASE_URL}assets/icons/default.svg`,
+            icon: `${BASE_URL}/assets/icons/default.svg`,
+            shape: 'circle',
+            size: 'large',
+            border: true,
         },
     },
     {
@@ -217,7 +273,10 @@ export const initialNodes = [
             label: 'Chemtrails',
             info: 'Aerial spraying for control.',
             branch: 'media',
-            icon: `${BASE_URL}assets/icons/default.svg`,
+            icon: `${BASE_URL}/assets/icons/default.svg`,
+            shape: 'ellipse',
+            size: 'small',
+            border: false,
         },
     },
 ];
