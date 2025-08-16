@@ -1,20 +1,5 @@
 // src/components/GraphQLExplorer.js
-import {
-    ApolloClient,
-    InMemoryCache,
-    ApolloProvider,
-    useQuery,
-    gql,
-} from '@apollo/client';
-import { useState } from 'react';
-
-const client = new ApolloClient({
-    uri: 'https://graphql.datocms.com/',
-    headers: {
-        Authorization: `Bearer de8fdc240d7f3e1b94936a2bb43fb6`,
-    },
-    cache: new InMemoryCache(),
-});
+import { useQuery, gql } from '@apollo/client';
 
 const TOPICS_QUERY = gql`
     query {
